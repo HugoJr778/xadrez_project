@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-import chess.ChessMath;
+import chess.ChessMatch;
 
 public class Program {
 
@@ -10,8 +10,8 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		ChessMath chessMath = new ChessMath();
-		UI.printBoard(chessMath.getPieces());
+		ChessMatch chessMatch = new ChessMatch();
+		UI.printBoard(chessMatch.getPieces());
 		
 		sc.close();
 
