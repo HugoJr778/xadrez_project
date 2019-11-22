@@ -29,8 +29,15 @@ public class ChessMatch {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
 		validateSourcePosition(source);
+		validadeTargetPosition(source, target);
 		Piece capturedPiece = mekaMove(source, target);
 		return (ChessPiece) capturedPiece;
+	}
+	
+	private void validadeTargetPosition(Position source, Position target) {
+		if(!board.piece(source).possibleMove(target)) {
+			throw new ChessException("There chosen piece can't move to target position");
+		}
 	}
 	
 	private Piece mekaMove(Position source, Position target) {
